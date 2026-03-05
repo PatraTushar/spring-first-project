@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- STEP 1: Define Spring beans configuration -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- STEP 2: Define a bean -->
+    <!-- id="myBean" → Bean name used to retrieve object -->
+    <!-- class="com.example.GreetingService" → Fully qualified class name -->
+
+    <!-- STEP 3: When container starts, Spring creates object of this class -->
+    <!-- Default scope = Singleton (only one object created) -->
+    <bean id="myBean" class="com.example.GreetingService"> </bean>
+
+    <bean id="EmailNotificationService" class="com.loose.EmailNotificationService"> </bean>
+
+    <bean id="UserService" class="com.loose.UserService">
+        <property name="notificationService" ref="EmailNotificationService"/>
+
+    </bean>
+
+</beans>
