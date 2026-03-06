@@ -1,13 +1,13 @@
 package com.example;
 
-// STEP 1: This is a simple POJO class (Plain Old Java Object)
-// Spring will create an object of this class based on XML configuration
+
+// This is a simple POJO class managed by Spring
 public class GreetingService {
 
-    // STEP 7: This method will be called after getting the bean from container
-    public void sayHello(){
+    // STEP 10: This method executes only when it is called from MainApp
+    public void sayHello() {
 
-        // STEP 8: Normal Java execution happens here
+        // STEP 11: Normal Java execution happens here
         System.out.println(" Hello From Spring! ");
     }
 }
